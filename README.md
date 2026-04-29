@@ -1,8 +1,8 @@
-# AI Automation Infrastructure 🤖
+# AI Automation Infrastructure 
 
 Sistem RAG (Retrieval-Augmented Generation) berbasis Llama 3.1 dan ChromaDB untuk otomatisasi pengetahuan korporat. Proyek ini dikembangkan sebagai bagian dari riset jalur Project Work (Pengganti Skripsi).
 
-## 🛠️ Tech Stack
+##  Tech Stack
 * **LLM:** Llama-3.1-8b-instant (via Groq Cloud)
 * **Orchestration:** LangChain (LCEL)
 * **Database:** ChromaDB
@@ -12,7 +12,7 @@ Sistem RAG (Retrieval-Augmented Generation) berbasis Llama 3.1 dan ChromaDB untu
 
 ## 📜 DevLog (Catatan Pengembangan)
 
-# AI Automation Infrastructure 🤖
+# AI Automation Infrastructure 
 
 Sistem RAG (*Retrieval-Augmented Generation*) berbasis Llama 3.1 dan ChromaDB untuk otomatisasi pengetahuan korporat. Proyek ini dikembangkan sebagai bagian dari riset jalur *Project Work* (Pengganti Skripsi).
 
@@ -51,9 +51,7 @@ Sistem RAG (*Retrieval-Augmented Generation*) berbasis Llama 3.1 dan ChromaDB un
 
 ---
 
-# AI Automation Infrastructure 🤖
-
-Sistem RAG (*Retrieval-Augmented Generation*) modular untuk otomatisasi pengetahuan korporat.
+*Sistem RAG (*Retrieval-Augmented Generation*) modular untuk otomatisasi pengetahuan korporat.*
 
 ---
 
@@ -62,21 +60,21 @@ Sistem RAG (*Retrieval-Augmented Generation*) modular untuk otomatisasi pengetah
 ### [2026-04-29] - PDF Integration & Dependency Hardening
 > **Status:** Success ✅
 
-#### 🎯 Objective
+####  Objective
 Meningkatkan kapabilitas AI agar mampu mengolah dokumen eksternal secara dinamis (PDF) alih-alih menggunakan teks statis di dalam kode.
 
-#### 🛠️ Actions Taken
+####  Actions Taken
 * **Document Loading:** Implementasi `PyPDFLoader` untuk ekstraksi data otomatis dari file PDF.
 * **Text Processing:** Optimalisasi `RecursiveCharacterTextSplitter` guna membagi dokumen menjadi *chunks* yang lebih bermakna untuk menjaga konteks.
 * **Vector Sync:** Sinkronisasi ulang `vectorstore` (Chroma) dengan data fisik untuk memastikan database selalu *up-to-date*.
 
-#### ⚠️ Challenges & Lessons Learned
+####  Challenges & Lessons Learned
 * **Syntax Awareness (`NameError`):** Terjadi *error* akibat pemanggilan *path* file tanpa tanda kutip. 
   * *Lesson:* Path file dalam Python wajib dianggap sebagai **String**.
 * **Library Sensitivity:** Menangani perubahan struktur LangChain yang memisahkan modul `langchain-chroma` dan `langchain-huggingface`.
 * **Dependency War:** Resolusi konflik `opentelemetry` pada *environment* Google Colab menggunakan teknik *version pinning*.
 
-#### 🏆 Result
+####  Result
 AI berhasil melakukan *retrieval* data secara akurat dari dokumen **"PT Maju Mundur AI"**, mencakup detail spesifik seperti angka denda keterlambatan, kontak keamanan (Hyuga Santa Claus), dan syarat tunjangan sertifikasi.
 
 ---

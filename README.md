@@ -58,7 +58,7 @@ Sistem RAG (*Retrieval-Augmented Generation*) berbasis Llama 3.1 dan ChromaDB un
 ## 📜 DevLog: Phase 3 - Deep Document Intelligence
 
 ### [2026-04-29] - PDF Integration & Dependency Hardening
-> **Status:** Success ✅
+> **Status:** Success 
 
 ####  Objective
 Meningkatkan kapabilitas AI agar mampu mengolah dokumen eksternal secara dinamis (PDF) alih-alih menggunakan teks statis di dalam kode.
@@ -75,7 +75,7 @@ Meningkatkan kapabilitas AI agar mampu mengolah dokumen eksternal secara dinamis
 * **Dependency War:** Resolusi konflik `opentelemetry` pada *environment* Google Colab menggunakan teknik *version pinning*.
 
 ####  Result
-AI berhasil melakukan *retrieval* data secara akurat dari dokumen **"PT Maju Mundur AI"**, mencakup detail spesifik seperti angka denda keterlambatan, kontak keamanan (Hyuga Santa Claus), dan syarat tunjangan sertifikasi.
+AI berhasil melakukan *retrieval* data secara akurat dari dokumen **"PT Maju Mundur AI"**, mencakup detail spesifik seperti angka denda keterlambatan, kontak keamanan (Santa Claus), dan syarat tunjangan sertifikasi.
 
 ---
 

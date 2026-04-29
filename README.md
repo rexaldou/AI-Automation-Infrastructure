@@ -51,6 +51,36 @@ Sistem RAG (*Retrieval-Augmented Generation*) berbasis Llama 3.1 dan ChromaDB un
 
 ---
 
+# AI Automation Infrastructure 🤖
+
+Sistem RAG (*Retrieval-Augmented Generation*) modular untuk otomatisasi pengetahuan korporat.
+
+---
+
+## 📜 DevLog: Phase 3 - Deep Document Intelligence
+
+### [2026-04-29] - PDF Integration & Dependency Hardening
+> **Status:** Success ✅
+
+#### 🎯 Objective
+Meningkatkan kapabilitas AI agar mampu mengolah dokumen eksternal secara dinamis (PDF) alih-alih menggunakan teks statis di dalam kode.
+
+#### 🛠️ Actions Taken
+* **Document Loading:** Implementasi `PyPDFLoader` untuk ekstraksi data otomatis dari file PDF.
+* **Text Processing:** Optimalisasi `RecursiveCharacterTextSplitter` guna membagi dokumen menjadi *chunks* yang lebih bermakna untuk menjaga konteks.
+* **Vector Sync:** Sinkronisasi ulang `vectorstore` (Chroma) dengan data fisik untuk memastikan database selalu *up-to-date*.
+
+#### ⚠️ Challenges & Lessons Learned
+* **Syntax Awareness (`NameError`):** Terjadi *error* akibat pemanggilan *path* file tanpa tanda kutip. 
+  * *Lesson:* Path file dalam Python wajib dianggap sebagai **String**.
+* **Library Sensitivity:** Menangani perubahan struktur LangChain yang memisahkan modul `langchain-chroma` dan `langchain-huggingface`.
+* **Dependency War:** Resolusi konflik `opentelemetry` pada *environment* Google Colab menggunakan teknik *version pinning*.
+
+#### 🏆 Result
+AI berhasil melakukan *retrieval* data secara akurat dari dokumen **"PT Maju Mundur AI"**, mencakup detail spesifik seperti angka denda keterlambatan, kontak keamanan (Hyuga Santa Claus), dan syarat tunjangan sertifikasi.
+
+---
+
 ## 🚀 Future Plans / Next Steps
 * **PDF Integration:** Upgrade kemampuan sistem agar dapat membaca dokumen dari file PDF secara dinamis.
 * **Memory Management:** Menambahkan fitur `ConversationBuffer` agar AI dapat mengingat konteks percakapan.
@@ -58,3 +88,4 @@ Sistem RAG (*Retrieval-Augmented Generation*) berbasis Llama 3.1 dan ChromaDB un
 
 ---
 *Developed by Rexaldo Dhiya Ulhaq*
+*Proyek ini terus dikembangkan sebagai bagian dari riset AI Automation.*

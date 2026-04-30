@@ -79,10 +79,40 @@ AI berhasil melakukan *retrieval* data secara akurat dari dokumen **"PT Maju Mun
 
 ---
 
-## 🚀 Future Plans / Next Steps
-* **PDF Integration:** Upgrade kemampuan sistem agar dapat membaca dokumen dari file PDF secara dinamis.
-* **Memory Management:** Menambahkan fitur `ConversationBuffer` agar AI dapat mengingat konteks percakapan.
-* **Deployment:** Integrasi *pipeline* ke platform *messaging* (WhatsApp/Telegram) melalui Make.com.
+## 📖 Devlog: RAG Engine v1 (30 April 2026)
+
+###  Detail Pengerjaan
+* Transisi dari arsitektur *legacy* (`langchain.chains`) ke arsitektur modern berbasis **LCEL** (LangChain Expression Language).
+* Implementasi sistem **History-Aware Retriever** agar AI memiliki *Persistent Memory* antar percakapan.
+* Uji coba PoC berhasil: AI mampu mengekstraksi dan menjawab *query* spesifik dari dokumen PDF internal (Panduan Operasional Karyawan) tanpa kehilangan konteks chat sebelumnya.
+
+###  Daftar Error & Solusi (Troubleshooting History)
+| Error Code / Issue | Penyebab | Solusi |
+| :--- | :--- | :--- |
+| `ModuleNotFoundError: 'langchain.chains'` | Bentrok instalasi bawaan Colab akibat *quiet mode* yang menumpuk. | Beralih penuh ke arsitektur LCEL; berhenti memanggil modul `.chains`. |
+| `Dependency Conflict` | Inkompatibilitas versi *library* karena *downgrade* spesifik. | *Update* seluruh ekosistem LangChain ke versi *Latest*, mengunci `opentelemetry` di `1.38.0`. |
+| `ImportError: 'is_offline_mode'` | Modul *embedding* kekurangan mesin pembaca yang kompatibel dengan HuggingFace terbaru. | Menambahkan `sentence-transformers` secara eksplisit ke *script* instalasi utama. |
+| `GroqError: api_key client option` | Instance `ChatGroq` dipanggil sebelum otorisasi variabel *environment*. | Reposisi *code block*; mendeklarasikan `os.environ["GROQ_API_KEY"]` sebelum inisialisasi LLM. |
+| `BadRequestError: 400` | Model `llama-3.1-70b-versatile` resmi dipensiunkan (*decommissioned*). | Memperbarui parameter model ke versi terbaru: `llama-3.3-70b-versatile`. |
+| `CustomError: Failed to save` | *Timeout* otentikasi API dari sesi Google Colab ke GitHub. | Menggunakan jalur *bypass*: unduh `.ipynb` lokal dan unggah *commit* manual ke repositori. |
+
+---
+
+## 🗺️ Goal Coding Update
+
+** Big Goal:** Membangun AI Otomatisasi mandiri kelas Enterprise yang mampu menyortir dan merespons berdasarkan data internal untuk kebutuhan bisnis.
+
+###  Posisi Sekarang
+* **[Python - AI Development]**
+  * **Level:** Intermediate-Advanced
+  * **Status:** Core Engine Selesai (100%). Otak AI beroperasi dengan memori konteks aktif dan pembacaan dokumen privat berjalan lancar.
+
+###  Next Step (Roadmap)
+- [ ] **Demonstrasi Proof of Concept (PoC):** Presentasi kemampuan dasar AI ke klien.
+- [ ] **User Interface (UI):** Membangun antarmuka interaktif menggunakan Streamlit atau Gradio.
+- [ ] **Integrasi Chat API:** Menyambungkan AI Engine ke platform komunikasi klien (WhatsApp/Telegram) untuk otomatisasi respons.
+- [ ] **Cloud Deployment:** Mengunggah sistem inti ke cloud server (AWS/GCP) agar AI beroperasi 24/7 tanpa henti.
+- [ ] **Analytics Dashboard:** Membangun sistem pemantauan untuk merekam tren pertanyaan dari operasional perusahaan.
 
 ---
 *Developed by Rexaldo Dhiya Ulhaq*

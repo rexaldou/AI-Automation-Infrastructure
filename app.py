@@ -99,4 +99,4 @@ if prompt := st.chat_input("Ask a question about your document..."):
                 st.error("Connection error. Please check the API configuration.")
         else:
             warning_msg = "Please upload and process a document before asking questions."
-            st.warning(warning_msg
+            st.warning(warning_msg)

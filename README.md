@@ -1,27 +1,32 @@
-# 🚀 Enterprise AI Automation Infrastructure: RAG Engine
+# 🚀 Enterprise AI Automation Infrastructure: RAG Engine (v1.0.0)
 
-A production-ready Retrieval-Augmented Generation (RAG) system utilizing Llama 3.3 and FAISS vector databases for automated corporate knowledge management. Developed as a core research project for enterprise AI automation.
+A professional-grade Retrieval-Augmented Generation (RAG) system built with Llama 3.3 and FAISS. This project serves as a stable baseline (v1) for automated corporate knowledge management.
 
-## System Architecture & Tech Stack
-* **Large Language Model (LLM):** Llama-3.3-70b-versatile (via Groq Cloud)
-* **Orchestration:** LangChain (LCEL Architecture)
-* **Vector Database:** FAISS (Facebook AI Similarity Search) & ChromaDB (Legacy)
-* **Embeddings:** HuggingFace (all-MiniLM-L6-v2)
-* **User Interface:** Streamlit 
+## Current Version: v1.0.0 (Stable)
+* **Architecture:** Pure LCEL (LangChain Expression Language) for modularity.
+* **Contextual Intelligence:** Advanced conversational memory for multi-turn dialogue.
+* **Inference Engine:** Llama-3.3-70b-versatile via Groq LPU.
+* **Interface:** Interactive Streamlit UI for seamless document ingestion.
 
-## Core Features
-* **Dynamic Document Intelligence:** Automated extraction and contextual chunking of corporate PDF documents.
-* **High-Speed Inference:** Sub-second response latency leveraging Groq Cloud's LPU processing.
-* **Context-Aware Retrieval:** Semantic search implementation to ensure precise answers based strictly on internal company data.
-* **Cloud Deployment Ready:** Configured for seamless deployment on Streamlit Community Cloud with secure environment variable management.
+## Tech Stack
+* **LLM:** Llama-3.3-70b-versatile
+* **Vector DB:** FAISS (In-memory)
+* **Embeddings:** HuggingFace `all-MiniLM-L6-v2`
+* **Framework:** Streamlit
 
-## Installation & Setup
-1. Clone this repository.
-2. Install dependencies: `pip install -r requirements.txt`
-3. Configure your API Key:
-   * Create a `.streamlit` directory.
-   * Add a `secrets.toml` file containing: `GROQ_API_KEY = "your_groq_api_key"`
-4. Run the application: `streamlit run app.py`
+## 🚀 Roadmap to v2.0.0 (Planned)
+Future updates will focus on infrastructure stability and broader file compatibility:
+- [ ] **Local Persistence:** Implementing FAISS index saving/loading to prevent data loss.
+- [ ] **Multi-Format Ingestion:** Adding support for `.docx` and `.txt` files.
+- [ ] **Prompt Optimization:** Refinement of system instructions for higher retrieval accuracy.
+- [ ] **UI/UX Enhancement:** Polishing the sidebar and chat aesthetics for a cleaner feel.
+
+## Installation & Usage
+1. `git clone https://github.com/rexaldou/ai-automation-infrastructure.git`
+2. `pip install -r requirements.txt`
+3. Configure `GROQ_API_KEY` in `.streamlit/secrets.toml`.
+4. Run: `streamlit run app.py`
 
 *Developed by Rexaldo Dhiya Ulhaq*
+
 *This is my learning journey in building RAG system,so if there is anything that suspicious/inefficient code,im truly sorry*
